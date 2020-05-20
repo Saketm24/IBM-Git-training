@@ -5,7 +5,9 @@
 *.log
 *.out 
 
-#Ignore files
+#Ignore java input files
+
+target/
 
 # BlueJ files
 *.ctxt
