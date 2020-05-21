@@ -7,6 +7,14 @@ pipeline {
             echo 'Hello World'
          }
       }
+      stage('Maven Build') {
+         steps {
+            withMaven(maven: 'mvn_3.6.3') {
+                sh 'mvn clean package'
+            }
+            archiveArtifacts 'target/devops.war'
+         }
+      }
      stage('Shell Script') {
          steps {
             sh label: '', script: '''
